@@ -55,5 +55,13 @@ module PivotalTracker
         raise ArgumentError, "Invalid group. Use :done, :current or :backlog instead."
       end
     end
+    
+    def find_integration_by_name(name)
+      integrations.each do |integration|
+        next unless integration.name == name
+        return integration
+        break
+      end
+    end
   end
 end
