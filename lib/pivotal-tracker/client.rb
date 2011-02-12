@@ -20,7 +20,7 @@ module PivotalTracker
 
       # this is your connection for the entire module
       def connection(options={})
-        @connection ||= RestClient::Resource.new("#{protocol}://www.pivotaltracker.com/services/v3", :headers => {'X-TrackerToken' => @token, 'Content-Type' => 'application/xml'})
+        RestClient::Resource.new("#{protocol}://www.pivotaltracker.com/services/v3", :headers => {'X-TrackerToken' => @token, 'Content-Type' => 'application/xml'})
       end
 
       protected
